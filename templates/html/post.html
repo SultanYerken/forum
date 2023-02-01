@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+    <link href="../static/css/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="navigation_bar">
+        <ul class="navigation_ul">
+            <li class="navigation_li"><a class="navigation_button" href="/">Main Page</a></li>
+        </ul>
+    </div>
+
+    <div class="main_list">
+        <h1>Post</h1>
+        
+        <div class="post_main">
+            <div class="posts">
+
+                <div class="posts_username">by {{.Post.Username}}</div>
+                        
+                <div class="posts_post">{{.Post.Post}}</div>
+                
+                <div class="posts_category">Category:<br>{{.Post.Category}}</div>
+
+            </div>
+        
+            <br><br>
+            
+            {{if .User.Username}}
+            <h2>Comments:</h2>
+                {{range .Comments}}
+                    <div class="comments_block">
+                        <div class="comment_username">by {{.Username}}</div>
+                        <div class="comment_comment">{{.Comment}}</div> 
+                    
+                        <div class="like_dislike">
+                            <form action="/likes/" target="_self">
+                                <button class="button" formmethod="POST" type="submit" name="commentId" value="{{.Id}}">
+                                    like {{.LikeCount}}
+                                </button> 
+                            </form>
+                            <form action="/dislikes/" target="_self">
+                                <button class="button" formmethod="POST" type="submit" name="commentId" value="{{.Id}}">
+                                    dislike {{.DislikeCount}}
+                                </button> 
+                            </form>
+                        </div>
+                    </div>  
+                {{end}}
+            {{else}}
+            <h2>Comments:</h2>
+                {{range .Comments}}
+                    <div class="comments_block">
+                        <div class="comment_username">by {{.Username}}</div>
+                        <div class="comment_comment">{{.Comment}}</div> 
+                    
+                        <div class="like_dislike">
+                            <button class="button">like {{.LikeCount}}</button> 
+                            <button class="button">dislike {{.DislikeCount}}</button>
+                        </div>
+                    </div>
+                {{end}}
+            {{end}} 
+                
+            <br><br><br>
+                
+            {{if .User.Username}}
+                <form action="/comment/" method="POST" target="_self">
+                    <input type="hidden" name="postId" value="{{.Post.Id}}">
+
+                    <div class="input_field">
+                        <textarea rows="7" cols="70" id="textarea" name="comment" placeholder="Write comment..."></textarea>
+                        <input class="button" type="submit" value="Create">
+                    </div>
+                </form>
+            {{end}}
+        </div>
+    </div>
+    <div class="Arigato" title="Arigato : )">
+        ありがとう
+    </div>
+</body>
+</html>
+

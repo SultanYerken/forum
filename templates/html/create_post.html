@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post</title>
+    <link href="../static/css/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="navigation_bar">
+        <ul class="navigation_ul">
+            <li class="navigation_li"><a class="navigation_button" href="/">Main Page</a></li>
+        </ul>
+    </div>
+    <div class="main_list">
+        <h1>Create Post</h1>
+
+        <div class="creat_post">
+            <form action="/posts/" method="POST" target="_self">
+                <div class="input_field">
+                    <textarea rows="7" cols="75" id="textarea" name="post" placeholder="Write post..."></textarea>
+                </div>
+
+                <div class="category">
+                    <ul class="category_ul">
+                       <a class="inscriptions">Category</a><br><br>
+                        
+                            <li class="category_li">
+                                <input type="checkbox" id="vehicle1" name="category" value="human">
+                                <label for="vehicle1">Human</label>
+                            </li>
+        
+                            <li class="category_li">
+                                <input type="checkbox" id="vehicle2" name="category" value="history">
+                                <label for="vehicle2">History</label>
+                            </li>
+        
+                            <li class="category_li">
+                                <input type="checkbox" id="vehicle3" name="category" value="book">
+                                <label for="vehicle3">Book</label>
+                            </li>
+        
+                            <li class="category_li">
+                                <input type="checkbox" id="vehicle4" name="category" value="movie">
+                                <label for="vehicle4">Movie</label>
+                            </li>
+        
+                            <li class="category_li">
+                                <input type="checkbox" id="vehicle5" name="category" value="engineering">
+                                <label for="vehicle5">Engineering</label>
+                            </li>
+        
+                            <li class="category_li">
+                                <input type="checkbox" id="vehicle6" name="category" value="other">
+                                <label for="vehicle6">Other</label>
+                            </li>
+                            <br><br>
+                            <button class="button" type="submit" value="Submit">Create</button>
+        
+                    </ul>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="Arigato" title="Arigato : )">
+        ありがとう
+    </div>
+</body>
+</html>
+
+

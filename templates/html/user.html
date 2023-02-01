@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.User.Username}}</title>
+    <link href="../static/css/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="navigation_bar">
+        <ul class="navigation_ul">
+            <li class="navigation_li"><a class="navigation_button" href="/">Main Page</a></li>
+        </ul>
+    </div>
+    <div class="main_list">
+        <h1>{{.User.Username}}</h1>  
+        
+        <div class="user_profile">
+            
+            <div class="posts_post">Your Posts:</div>
+            <div class="posts">
+                {{range .Posts}}
+                <a href="/posts?id={{.Id}}">
+                    <div class="posts_username">{{.Username}}</div>
+                    
+                    <div class="posts_post">{{.Post}}</div>
+                    
+                    <div class="posts_category">category: {{.Category}}</div>
+                </a>
+                {{end}}
+            </div>
+
+
+            <div class="posts_post">Your liked Posts:</div>
+            <div class="posts">
+                {{range .PostsLike}}
+                <a href="/posts?id={{.Id}}">
+                    <div class="posts_username">{{.Username}}</div>
+                    
+                    <div class="posts_post">{{.Post}}</div>
+                    
+                    <div class="posts_category">Category:<br>{{.Category}}</div>
+                </a>
+                {{end}}
+            </div>
+
+
+            <div class="posts_post">Your disliked Posts:</div>
+            <div class="posts">
+                {{range .Postsdislike}}
+                <a href="/posts?id={{.Id}}">
+                    <div class="posts_username">{{.Username}}</div>
+                    
+                    <div class="posts_post">{{.Post}}</div>
+                    
+                    <div class="posts_category">Category:<br>{{.Category}}</div>
+                </a>
+                {{end}}
+            </div>
+
+        </div>
+    </div>
+    <div class="Arigato" title="Arigato : )">
+        ありがとう
+    </div>
+</body>
+</html>
+
+

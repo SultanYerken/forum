@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forum</title>
+    <link href="../static/css/main.css" rel="stylesheet" type="text/css">
+</head>
+
+
+<body>
+
+
+    <div class="navigation_bar">
+        {{if .User.Username}}
+            <ul class="navigation_ul">
+                <form action="/logout" target="_self">
+                   <li class="navigation_li"><a lass="navigation_button"><button class="logout" formmethod="post">Log Out</button></a></li>
+                </form>
+          
+                <li class="navigation_li"><a class="navigation_button" href="/user">User Profile</a></li>
+                <li class="navigation_li"><a class="navigation_button" href="/posts/">Create Post</a></li>
+            </ul>
+
+        {{else}}    
+                
+            <ul class="navigation_ul">
+                <li class="navigation_li"><a class="navigation_button" href="/signup">SIGN UP</a></li>
+                <li class="navigation_li"><a class="navigation_button" href="/signin">SIGN IN</a></li>
+            </ul>
+
+        {{end}}
+    </div>
+
+    <div class="main_list">
+
+        <h1><a href="/" style="text-decoration:none; color:inherit">forum</a></h1>
+
+        <div class="category">
+            <ul class="category_ul">
+               <a class="inscriptions">Category</a><br><br>
+                <form action="/">
+                    <li class="category_li">
+                        <input type="checkbox" id="vehicle1" name="category" value="human">
+                        <label for="vehicle1">Human</label>
+                    </li>
+
+                    <li class="category_li">
+                        <input type="checkbox" id="vehicle2" name="category" value="history">
+                        <label for="vehicle2">History</label>
+                    </li>
+
+                    <li class="category_li">
+                        <input type="checkbox" id="vehicle3" name="category" value="book">
+                        <label for="vehicle3">Book</label>
+                    </li>
+
+                    <li class="category_li">
+                        <input type="checkbox" id="vehicle4" name="category" value="movie">
+                        <label for="vehicle4">Movie</label>
+                    </li>
+
+                    <li class="category_li">
+                        <input type="checkbox" id="vehicle5" name="category" value="engineering">
+                        <label for="vehicle5">Engineering</label>
+                    </li>
+
+                    <li class="category_li">
+                        <input type="checkbox" id="vehicle6" name="category" value="other">
+                        <label for="vehicle6">Other</label>
+                    </li>
+                    <br><br>
+                    <button class="button" type="submit" value="Submit">Search</button>
+
+                </form>
+            </ul>
+        </div>
+
+        <br><br>
+
+        {{if .User.Username}}
+            {{range .Posts}}
+                <div class="posts">
+                    <a href="/posts?id={{.Id}}">
+                        <div class="posts_username">by {{.Username}}</div>
+                        
+                        <div class="posts_post">{{.Post}}</div>
+                        
+                        <div class="posts_category">Category:<br>{{.Category}}</div>
+                    </a>
+             
+                    <div class="like_dislike">
+                        <form action="/likes/" target="_self">
+                            <button class="button" formmethod="POST" type="submit" name="postId" value="{{.Id}}">
+                                like {{.LikeCount}}
+                            </button> 
+                        </form>
+                        <form action="/dislikes/" target="_self">
+                            <button class="button" formmethod="POST" type="submit" name="postId" value="{{.Id}}">
+                                dislike {{.DislikeCount}}
+                            </button> 
+                        </form>
+                    </div>
+                </div>
+                <br><br>
+            {{end}}
+        {{else}}
+            {{range .Posts}}
+                <div class="posts">
+                    <a href="/posts?id={{.Id}}">
+                        <div class="posts_username">by {{.Username}}</div>
+                        
+                        <div class="posts_post">{{.Post}}</div>
+                        
+                        <div class="posts_category">Category:<br>{{.Category}}</div>
+                    </a>
+
+                    <div class="like_dislike">
+                        <button class="button">like {{.LikeCount}}</button> 
+                        <button class="button">dislike {{.DislikeCount}}</button>
+                    </div>
+                </div>
+                <br><br>
+            {{end}}
+        {{end}}
+    </div>
+    <div class="Arigato" title="Arigato : )">
+        ありがとう
+    </div>
+</body>
+</html>
+

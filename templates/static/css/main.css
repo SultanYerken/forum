@@ -1,0 +1,246 @@
+body{
+    margin:0;
+    background-color: snow;
+    color:black;
+} 
+
+h1{
+    font-size: 70px;
+    color:black;
+}
+
+.button{
+    max-width:100%;
+    height:auto;
+    background-color: black;
+    color: #FFEFBA;
+    cursor:pointer;
+    padding: 10px;
+    border-radius: 25px;
+    font-size: 15px;
+  }
+  .logout{
+    max-width:100%;
+    height:auto;
+    background-color: black;
+    color: #FFEFBA;
+    cursor:pointer;
+    padding: 13px;
+    font-size: 18px;
+  }
+  .like_dislike{
+    display: flex;
+  }
+
+.inscriptions{
+    font-size: 20px;
+}
+
+
+
+.main_list{
+    padding:100px;
+    padding-top:30px;
+    align-items: center;
+    justify-content: center;
+    min-height: 72em;
+    height: auto;
+    background: #FFEFBA;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFFFF, #FFEFBA);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+
+.navigation_bar{
+font-size: 18px;
+}
+
+ul.navigation_ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+   background-color: black;
+}
+li.navigation_li{
+    float:right;
+}
+
+li a.navigation_button {
+    display: block;
+    text-align: center;
+    padding:15px 15px;
+    text-decoration: none;
+    color:#FFEFBA;
+}
+
+li a.navigation_button:hover{
+    background-color: #FFEFBA;
+    color:black;
+}
+
+
+
+.category{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+ul.category_ul{
+    text-align: center;
+    list-style: none;
+}
+
+ul.category_ul li{
+    display: inline;
+}
+
+ul.category_ul li label{
+    display: inline-block;
+    border: 2px solid rgba(139, 139, 139, .3);
+    color: black;
+    border-radius: 25px;
+    white-space: nowrap;
+    margin: 3px 0px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: all .2s;
+
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+ul.category_ul li label::before{
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 12px;
+    padding: 2px 6px 2px 2px;
+    content: "\f067";
+    transition: transform .3s ease-in-out;
+
+}
+
+ul.category_ul li input[type="checkbox"]:checked + label::before {
+    content: "\f00c";
+    transform: rotate(-360deg);
+    transition: transform .3s ease-in-out;
+}
+
+ul.category_ul li input[type="checkbox"]:checked + label{
+    border: 2px solid #1bdbf8;
+    background-color: darkred;
+    color: #FFEFBA;
+    transition: all .2s;
+}
+
+ul.category_ul li input[type="checkbox"]{
+    display: absolute;
+    position: absolute;
+    opacity: 0;
+}
+ul.category_ul li input[type="checkbox"]:focus + label{
+    border: 2px solid #e9a1ff;
+}
+
+
+
+.posts{
+    margin:20px;
+    padding: 30px;
+    border:2px solid black;
+    border-radius: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.posts a{
+    text-decoration:none; 
+    color:inherit;
+}
+.posts_username{
+    padding: 5px;
+    font-size: 25px;
+    text-align: center;
+    color:rgb(95, 5, 5);
+    overflow: auto;
+}
+.posts_post{
+    padding:20px 10px;
+    font-size: 21px;
+    text-align: left;
+    overflow: auto;
+}
+.posts_category{
+    padding:10px;
+    text-align: right;
+    color:rgb(95, 5, 5);
+}
+
+
+.auth{
+    font-size: 21px;
+}
+.input_div{
+    margin:30px 0px;
+}
+
+input.input_auth{
+    font-size: 15px;
+    text-align: center;
+    padding:15px;
+    border-radius: 25px;
+}
+.input_buttons{
+    margin:50px;
+}
+
+.comments_block{
+    margin:50px 25px;
+}
+
+.comment_username{
+    margin: 10px;
+    color:rgb(95, 5, 5);
+    font-size: 18px;
+    overflow:auto;
+}
+.comment_comment{
+    margin: 10px 10px 20px 20px;
+    padding:10px;
+    overflow:auto;
+}
+
+.input_field{
+    text-align: center;
+}
+#textarea{
+    padding:10px;
+    font-size: 16px;
+    background: rgba(234, 230, 206, 0.1);
+    border-radius: 25px;
+}
+
+.Arigato{
+    padding:20px;
+    text-align: center;
+    background: #FFEFBA;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFFFF, #FFEFBA);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
