@@ -11,6 +11,12 @@ func NewSQLiteDB() (*sql.DB, error) {
 		log.Println(err)
 		return nil, err
 	}
+	
+	if err = db.Ping(); err != nil {
+		log.Println("ping:", err)
+		return nil, err
+	}
+	
 	forTableConnection(db)
 	return db, nil
 }
